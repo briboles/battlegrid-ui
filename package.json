@@ -1,0 +1,52 @@
+{
+  "name": "battlegrid-ui",
+  "version": "1.0.0",
+  "description": "Angular UI for Battlegrid game",
+  "main": "index.js",
+  "scripts": {
+    "test": "bash runtests.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briboles/battlegrid-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/briboles/battlegrid-ui/issues"
+  },
+  "homepage": "https://github.com/briboles/battlegrid-ui#readme",
+  "dependencies": {
+    "jspm": "^0.16.22"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-shell": "^0.5.1",
+    "istanbul": "^0.4.2",
+    "jspm-bower-endpoint": "^0.3.2",
+    "lodash": "^3.10.1",
+    "mocha": "^2.3.4",
+    "rimraf": "^2.5.0",
+    "run-sequence": "^1.1.5",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
+  },
+  "jspm": {
+    "directories": {
+      "lib": "."
+    },
+    "dependencies": {
+      "angular": "npm:angular@^1.4.1",
+      "angular-animate": "npm:angular-animate@1.4.8",
+      "angular-cookies": "bower:angular-cookies@^1.4.6",
+      "angular-route": "npm:angular-route@^1.4.1",
+      "json": "github:systemjs/plugin-json@^0.1.0",
+      "lodash": "npm:lodash@^3.10.1"
+    },
+    "devDependencies": {
+      "json": "github:systemjs/plugin-json@^0.1.0"
+    }
+  }
+}
