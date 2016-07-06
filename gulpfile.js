@@ -71,41 +71,30 @@ gulp.task('exit', function() {
 
 /* Ability to watch without clean and install */
 // copy HTML changes
-gulp.task('html-watch', buildMethods.html);
+gulp.task('html-watch', function() {
+  return gulp.watch(['lib/html/**/*.html'], ['html'])
+    .on('change', function(event) {
+      console.log('Change Detected in '+ event.path);
+    })
+});
 
-// copy image changes
-gulp.task('images-watch', buildMethods.images);
-
-// copy font changes
-gulp.task('fonts-watch', buildMethods.fonts);
-
-// compile SASS w/ compass (this could be nicer)
-gulp.task('compass-watch', buildMethods.compass);
-
-gulp.task('jspm-bundle-watch', buildMethods.jspmBundle);
+gulp.task('jspm-bundle-watch', function() {
+  return gulp.watch(['lib/js/**/*.js'], ['jspm-bundle'])
+    .on('change', function(event) {
+      console.log('Change Detected in '+ event.path);
+    })
+});
 /* End watch tasks*/
 
 /* Build methods*/
 // copy HTML changes
 gulp.task('html', buildMethods.html);
 
-// copy image changes
-gulp.task('images', ['install'], buildMethods.images);
-
-// copy font changes
-gulp.task('fonts', ['install'], buildMethods.fonts);
-
-// compile SASS w/ compass (this could be nicer)
-gulp.task('compass', ['install'], buildMethods.compass);
-
-// compile minified SASS w/ compass
-gulp.task('compass-min', ['install'], buildMethods.compassMin);
-
 // bundle jspm
-gulp.task('jspm-bundle', ['install'], buildMethods.jspmBundle);
+gulp.task('jspm-bundle', buildMethods.jspmBundle);
 
 // bundle minified jspm
-gulp.task('jspm-bundle-min', ['install'], buildMethods.jspmBundleMin);
+gulp.task('jspm-bundle-min', buildMethods.jspmBundleMin);
 
 gulp.task('clean', buildMethods.clean);
 
@@ -117,20 +106,20 @@ gulp.task('version', ['html'], buildMethods.version);
 // build dist
 gulp.task('default', function() {
   run(
-    ['compass', 'fonts', 'images', 'jspm-bundle'],
+    'install',
+    ['images', 'jspm-bundle'],
     'version',
     'exit'
   );
 });
 
-// develop a locally-hosted build
-gulp.task('host', ['watch', 'connect']);
+gulp.task('watch', ['html-watch','jspm-bundle-watch']);
 
 // build dist for production
 gulp.task('package', function() {
   run(
     'clean',
-    ['images', 'fonts', 'compass-min', 'jspm-bundle-min'],
+    ['images', 'jspm-bundle-min'],
     'version',
     'exit'
   );
