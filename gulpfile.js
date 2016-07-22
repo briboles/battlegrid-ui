@@ -9,8 +9,8 @@ var run = require('run-sequence');
 
 var buildMethods = {
   html:function() {
-    return gulp.src('./lib/html/**/*')
-      .pipe(gulp.dest('./dist'));
+    return gulp.src('./lib/**/*.html')
+      .pipe(gulp.dest('dist'));
   },
   images:function() {
       return gulp.src('./lib/images/**/*')
@@ -19,6 +19,10 @@ var buildMethods = {
   fonts:function() {
     return gulp.src('./lib/fonts/**/*')
       .pipe(gulp.dest('./dist/fonts'));
+  },
+  css:function() {
+    return gulp.src('./lib/css/**/*')
+      .pipe(gulp.dest('./dist/css'));
   },
   compass:function() {
     return gulp.src('./lib/scss/**/*.scss')
@@ -38,13 +42,13 @@ var buildMethods = {
   jspmBundle:function() {
     return gulp.src('')
       .pipe(shell([
-        'jspm bundle-sfx index dist/js/index.js'
+        'jspm bundle-sfx index dist/index.js'
       ]));
   },
   jspmBundleMin:function() {
     return gulp.src('')
       .pipe(shell([
-        'jspm bundle-sfx index dist/js/index.js --minify'
+        'jspm bundle-sfx index dist/index.js --minify'
       ]));
   },
   clean:function(cb) {
@@ -72,23 +76,31 @@ gulp.task('exit', function() {
 /* Ability to watch without clean and install */
 // copy HTML changes
 gulp.task('html-watch', function() {
-  return gulp.watch(['lib/html/**/*.html'], ['html'])
+  return gulp.watch(['lib/**/*.html'], ['html'])
     .on('change', function(event) {
       console.log('Change Detected in '+ event.path);
-    })
+    });
+});
+
+gulp.task('css-watch', function() {
+  return gulp.watch(['lib/**/*.css'], ['css'])
+    .on('change', function(event) {
+      console.log('Change Detected in '+ event.path);
+    });
 });
 
 gulp.task('jspm-bundle-watch', function() {
-  return gulp.watch(['lib/js/**/*.js'], ['jspm-bundle'])
+  return gulp.watch(['lib/**/*.js', './index.js'], ['jspm-bundle'])
     .on('change', function(event) {
       console.log('Change Detected in '+ event.path);
-    })
+    });
 });
 /* End watch tasks*/
 
 /* Build methods*/
 // copy HTML changes
 gulp.task('html', buildMethods.html);
+gulp.task('css', buildMethods.css);
 
 // bundle jspm
 gulp.task('jspm-bundle', buildMethods.jspmBundle);
@@ -107,19 +119,20 @@ gulp.task('version', ['html'], buildMethods.version);
 gulp.task('default', function() {
   run(
     'install',
-    ['images', 'jspm-bundle'],
+    'jspm-bundle',
+    'css',
     'version',
     'exit'
   );
 });
 
-gulp.task('watch', ['html-watch','jspm-bundle-watch']);
+gulp.task('watch', ['html-watch','jspm-bundle-watch', 'css-watch']);
 
 // build dist for production
 gulp.task('package', function() {
   run(
     'clean',
-    ['images', 'jspm-bundle-min'],
+    'jspm-bundle-min',
     'version',
     'exit'
   );
