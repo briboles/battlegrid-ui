@@ -24,4 +24,5 @@ require('angular').module('bg', [
   require('./lib/sockettest/sockettest')
 
 ])
-.config(require('./lib/app.config'));
+.config(require('./lib/app.config')); 
+//.run(require('./lib/preboot'));
