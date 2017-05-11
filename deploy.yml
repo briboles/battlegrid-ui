@@ -1,0 +1,21 @@
+---
+- hosts: all
+  remote_user: root
+
+  tasks:
+  - git:
+      repo: git@github.com:briboles/battlegrid-ui.git
+      dest: /var/www/battlegrid-angular-ui
+      key_file: /root/.ssh/personal_github
+      version: '{{ hash }}'
+      accept_hostkey: yes
+    become: yes
+
+  - name: Install packages based on package.json.
+    npm:
+      path: /var/www/battlegrid-angular-ui
+    become: yes
+
+  - name: Deploy API
+    command: /bin/bash /var/scripts/deploy-angular-ui.sh
+    become: yes
