@@ -1,1 +1,0 @@
-battlegrid ansible_host=192.169.150.151 ansible_user=bboles ansible_sudo=true ansible_connection=smart

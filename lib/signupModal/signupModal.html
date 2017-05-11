@@ -1,7 +1,8 @@
 <div>
   <form ng-submit="bgSignupModalCtrl.submit(_email, _password)">
-    <input type="email" ng-model="_email" />
-    <input type="password" ng-model="_password" />
+    Email <input type="email" ng-model="_email" />
+    Password <input type="password" ng-model="_password" />
+    Name <input type="text" ng-model="_name" />
     <button>Submit</button>
   </form>
   <button ng-click="bgSignupModalCtrl.cancel()">Cancel</button>
