@@ -3,7 +3,6 @@
   remote_user: root
   # time ansible-playbook -i ../battlegrid-deploy/inventory -k ./deploy.yml --extra-vars "hash=`git rev-parse HEAD`"
 
-
   tasks:
   - git:
       repo: git@github.com:briboles/battlegrid-ui.git
