@@ -14,7 +14,7 @@ require('./lib/preboot')().then(function appStart() {
     'ngCookies',
     'ngRoute',
     'ui.bootstrap',
-    'bg.preboot',
+    'preboot',
 
     require('./lib/core/core.module'),
 
@@ -27,9 +27,10 @@ require('./lib/preboot')().then(function appStart() {
     require('./lib/sockettest/sockettest')
   ])
   .config(require('./lib/app.config')); 
+
+  // start bootstrap
+  angular.element(document).ready(function () {
+    angular.bootstrap(document, ['bg'], { strictDi: true });
+  });
 });
 
-// start bootstrap
-angular.element(document).ready(function () {
-  angular.bootstrap(document, ['bg'], { strictDi: true });
-});
