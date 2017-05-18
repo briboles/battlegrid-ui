@@ -14,6 +14,7 @@ require('./lib/preboot')().then(function appStart() {
     'ngCookies',
     'ngRoute',
     'ui.bootstrap',
+    'bg.preboot',
 
     require('./lib/core/core.module'),
 
