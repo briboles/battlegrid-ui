@@ -31,5 +31,5 @@ require('./lib/preboot')().then(function appStart() {
 
 // start bootstrap
 angular.element(document).ready(function () {
-  angular.bootstrap(document, ['app'], { strictDi: true });
+  angular.bootstrap(document, ['bg'], { strictDi: true });
 });
