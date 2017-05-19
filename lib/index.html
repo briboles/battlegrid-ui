@@ -45,7 +45,6 @@
     </style>
 
     <div class="container" ng-controller="sockettest">
-      <div ng-repeat="bd in board track by $index">
 
         <div id="label-top" class="row" >
           <div id="label-left" class="row-label"></div>
@@ -57,8 +56,6 @@
           <div class="square" ng-repeat"c in col" >{{board[r][j].name}}</div>
         </div>
 
-
-      </div>
     </div>
     
     <script src="index.js"></script>
