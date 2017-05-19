@@ -54,7 +54,7 @@
 
         <div class="row" ng-repeat="r in rows track by $index">
           <div id="label-left" class="row-label">{{ r }}</div>
-          <div class="square" ng-repeat"c in col track by $index" >{{ board[r][c].name }}</div>
+          <div class="square" ng-repeat="c in col track by $index" >{{ board[r][c].name }}</div>
         </div>
       </div>
     </div>
