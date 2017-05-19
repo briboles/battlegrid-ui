@@ -49,12 +49,12 @@
       <div class="container">
         <div id="label-top" class="row" >
           <div id="label-left" class="row-label"></div>
-          <div class="col-label text-center" ng-repeat="c in col track by $index">{{c}}</div>
+          <span class="col-label text-center" ng-repeat="c in col track by $index">{{c}}</span>
         </div>
 
         <div class="row" ng-repeat="r in rows track by $index">
           <div id="label-left" class="row-label">{{ r }}</div>
-          <div class="square" ng-repeat="c in col track by $index" >{{ board[r][c].name }}</div>
+          <span class="square" ng-repeat="c in col track by $index" >{{ board[r][c].name }}</span>
         </div>
       </div>
     </div>
