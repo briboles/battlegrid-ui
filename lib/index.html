@@ -9,9 +9,17 @@
     <bg-navbar></bg-navbar>
 
     <div class="container" ng-controller="sockettest">
-      <div ng-repeat="cord in board track by $index">
+      <div ng-repeat="bd in board track by $index">
 
-        <div >{{cord}}</div>
+        <div id="Row Label" class="row">
+          <span>{{bd.label}}</span>
+
+          <div ng-repeat="r in bd.row track by $index">
+            {r}
+          </div>
+
+        </div>
+
 
       </div>
     </div>
