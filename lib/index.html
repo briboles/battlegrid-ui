@@ -9,9 +9,13 @@
     <bg-navbar></bg-navbar>
 
     <div class="container" ng-controller="sockettest">
-      - Current Public Games (Table listing Joinable Games)
-      - 
+      <div ng-repeat="cord in board track by $index">
+
+        <div >{{cord}}</div>
+
+      </div>
     </div>
+    
     <script src="index.js"></script>
   </body>
 </html>
