@@ -7,17 +7,54 @@
   </head>
   <body>
     <bg-navbar></bg-navbar>
+    <style>
+      .square {
+        border: red;
+        border-weight: 1px;
+        border-style: solid;
+        border-color: gray;
+        height: 50px;
+        width: 50px;
+        margin-left: -3px;
+        margin-bottom: -3px;
+      }
+
+      .square:hover { 
+        background-color: yellow;
+      }
+
+      .square.hit {
+        background-color: red;
+      }
+
+      .square.miss {
+        background-color: black;
+      }
+
+      .col-label {
+        width: 50px;
+        margin-left: -3px;
+      }
+
+      .row-label {
+        width: 15px;
+        padding-top: 14px;
+        padding-right: 2px;
+        margin-bottom: -3px;
+      }
+    </style>
 
     <div class="container" ng-controller="sockettest">
       <div ng-repeat="bd in board track by $index">
 
-        <div id="Row Label" class="row">
-          <span>{{bd.label}}</span>
+        <div id="label-top" class="row" >
+          <div id="label-left" class="row-label"></div>
+          <div class="col-label text-center" ng-repeat="c in col track by $index">{{c}}<div>
+        </div>
 
-          <div ng-repeat="r in bd.row track by $index">
-            {{r}}
-          </div>
-
+        <div class="row" ng-repeat="r in row track by $index">
+          <div id="label-left" class="row-label">{{r}}</div>
+          <div class="square" ng-repeat"c in col" >{{board[r][j].name}}</div>
         </div>
 
 
