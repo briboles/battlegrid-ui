@@ -1,1 +1,36 @@
 body { padding-top: 70px; }
+
+.square {
+  border: red;
+  border-weight: 1px;
+  border-style: solid;
+  border-color: gray;
+  height: 50px;
+  width: 50px;
+  margin-left: -3px;
+  margin-bottom: -3px;
+}
+
+.square:hover { 
+  background-color: yellow;
+}
+
+.square.hit {
+  background-color: red;
+}
+
+.square.miss {
+  background-color: black;
+}
+
+.col-label {
+  width: 50px;
+  margin-left: -3px;
+}
+
+.row-label {
+  width: 15px;
+  padding-top: 14px;
+  padding-right: 2px;
+  margin-bottom: -3px;
+}

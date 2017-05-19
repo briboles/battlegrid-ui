@@ -1,4 +1,4 @@
-<nav class="navbar navbar-toggleable-md bg-inverse fixed-top">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,8 +14,8 @@
     <form class="form-inline my-2 my-lg-0">
       <span ng-if="auth()" class="" >Welcome, {{ user() }}.</span>
       <span ng-if="auth()" class="" ><a ng-click="logout()" >Logout</a></span>
-      <button ng-if="!auth()" class="btn btn-outline-info">Sign In</button>
-      <button ng-if="!auth()" class="btn btn-info" ng-click="">Logout</button>
+      <button ng-if="!auth()" class="btn btn-outline-success">Sign In</button>
+      <button ng-if="!auth()" class="btn btn-success" ng-click="">Logout</button>
     </form>
   </div>
 </nav>
