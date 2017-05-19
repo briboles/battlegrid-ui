@@ -1,8 +1,6 @@
 <nav class="navbar navbar-inverse bg-inverse fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#/">BattleGrid</a>
-    </div>
+
+    <a class="navbar-brand" href="#/">BattleGrid</a>
     <span ng-if="auth()" class="navbar-right navbar-text" >Welcome, {{ user() }}.</span>
     <span ng-if="auth()" class="navbar-right navbar-text" ><a ng-click="logout()" >Logout</a></span>
     <button ng-if="!auth()" class="btn btn-info navbar-btn navbar-right">Sign In</button>
@@ -12,5 +10,5 @@
         <a href="#/publicgames">Public Games</a>
       </li>
     </ul>
-  </div>
+
 </nav>
