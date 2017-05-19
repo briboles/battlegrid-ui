@@ -2,12 +2,10 @@
   
   <a class="navbar-brand" href="#/">BattleGrid</a>
 
-  <div>
-    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-      <li class="nav-item">
-        <a class="nav-link" href="#/publicgames">Public Games</a>
-      </li>
-    </ul>
+  <div class="nav">
+
+    <a class="nav-link" href="#/publicgames">Public Games</a>
+   
     <span ng-if="auth()" class="" >Welcome, {{ user() }}.</span>
     <span ng-if="auth()" class="" ><a ng-click="logout()" >Logout</a></span>
     <button ng-if="!auth()" class="btn btn-outline-info">Sign In</button>
