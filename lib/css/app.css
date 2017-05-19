@@ -9,6 +9,7 @@ body { padding-top: 70px; }
   width: 50px;
   margin-left: -3px;
   margin-bottom: -3px;
+  cursor: pointer;
 }
 
 .square:hover { 
