@@ -1,0 +1,13 @@
+<div id="game-board" class="container justify-content-center">
+
+  <div class="row" >
+    <span id="label-left" class="row-label"></span>
+    <span class="col-label text-center" ng-repeat="c in col track by $index">{{c}}</span>
+  </div>
+
+  <div class="row" ng-repeat="r in rows track by $index">
+    <span id="label-left" class="row-label">{{ r }}</span>
+    <span id="{{ board[r][c].name }}" class="square" ng-repeat="c in col track by $index" ></span>
+  </div>
+  
+</div>

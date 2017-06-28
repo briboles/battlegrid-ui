@@ -25,4 +25,3 @@ Design tasks
       Show any public matches. (Join Button will prompt for login)
       Login/Signup buttons display.
 
-  
