@@ -7,7 +7,12 @@
 
   <div class="row" ng-repeat="r in gb.rows track by $index">
     <span id="label-left" class="row-label">{{ r }}</span>
-    <span id="{{ gb.board[r][c].name }}" class="square" ng-repeat="c in gb.col track by $index" ></span>
+    <span 
+      id="{{ gb.board[r][c].name }}" 
+      class="square" 
+      ng-repeat="c in gb.col track by $index"
+      ng-click="gb.board[r][c].onClick"
+    ></span>
   </div>
 
 </div>
