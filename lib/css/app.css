@@ -32,6 +32,10 @@ body { padding-top: 70px; }
   background-color: black;
 }
 
+.square.selected {
+  background-color: cadetblue;
+}
+
 .col-label {
   width: 50px;
   margin-left: -3px;
