@@ -20,7 +20,15 @@ body { padding-top: 70px; }
   background-color: red;
 }
 
+.square.hit:hover {
+  background-color: red;
+}
+
 .square.miss {
+  background-color: black;
+}
+
+.square.miss:hover {
   background-color: black;
 }
 

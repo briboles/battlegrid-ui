@@ -10,6 +10,7 @@
     <span 
       id="{{ gb.board[r][c].name }}" 
       class="square" 
+      ng-class="{ hit: gb.board[r][c].hit, miss: gb.board[r][c].miss }"
       ng-repeat="c in gb.col track by $index"
       ng-click="gb.board[r][c].onClick()"
     ></span>
