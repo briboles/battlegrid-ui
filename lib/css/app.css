@@ -2,7 +2,7 @@ body { padding-top: 70px; }
 
 .square {
   border: red;
-  border-width: 1px;
+  border-wieght: 1px;
   border-style: solid;
   border-color: gray;
   height: 50px;
