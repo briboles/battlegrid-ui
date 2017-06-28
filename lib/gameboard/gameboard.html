@@ -11,7 +11,7 @@
       id="{{ gb.board[r][c].name }}" 
       class="square" 
       ng-repeat="c in gb.col track by $index"
-      ng-click="gb.board[r][c].onClick"
+      ng-click="gb.board[r][c].onClick()"
     ></span>
   </div>
 
