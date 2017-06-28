@@ -23,6 +23,8 @@
   <button 
     class="btn " 
     ng-class="{ 'btn-danger': gb.selectionPending }"
+    ng-disabled="!gb.selectionPending"
+    ng-click="gb.confirmSelection()"
   >Fire!</button>
 
 </div>
