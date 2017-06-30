@@ -24,7 +24,7 @@ require('./lib/preboot')().then(function appStart() {
     require('./lib/signupModal/signupModal.module'),
     require('./lib/navbar/navbar.module'),
     require('./lib/gameboard/gameboard.module'),
-    require('./lib/game/game/module'),
+    require('./lib/game/game.module'),
     require('./lib/auth/auth.module'),
     require('./lib/sockettest/sockettest')
   ])
